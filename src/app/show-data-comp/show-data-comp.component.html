@@ -1,0 +1,27 @@
+<p>show-data-comp works!</p>
+<div class="container">
+    <h2 class="text-center">Course List</h2>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Course Id</th>
+                <th>Course Description</th>
+                <th>Couse Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of info">
+                <td> {{ i.id }} </td>
+                <td> {{ i.description }} </td>
+                <td> {{ i.title }} </td>
+                <td>
+                    <!-- <button (click) = "updateUser(user.id)" class="btn btn-info">Update</button>
+                    <button (click) = "deleteUser(user.id)" class="btn btn-danger">Delete</button> -->
+                    <button class="btn btn-info" [routerLink]="['/editcourse',i.id]">Update></button>
+                    <button class="btn btn-info" (click)="deleteCourse(i.id)">Delete></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
